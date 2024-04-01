@@ -1,22 +1,20 @@
-# source https://github.com/robert-hh/hx711-lopy
-
 from machine import Pin, enable_irq, disable_irq, idle
 
 class HX711:
     def __init__(self, dout, pd_sck, gain=128):
 
-        self.pSCK = Pin(pd_sck, mode=Pin.OUT)
+        self.pSCK = Pin(pd_sck , mode=Pin.OUT)
         self.pOUT = Pin(dout, mode=Pin.IN, pull=Pin.PULL_DOWN)
         self.pSCK.value(False)
 
         self.GAIN = 0
         self.OFFSET = 0
         self.SCALE = 1
-
+        
         self.time_constant = 0.1
         self.filtered = 0
 
-        self.set_gain(gain)
+        self.set_gain(gain);
 
     def set_gain(self, gain):
         if gain is 128:
@@ -28,8 +26,8 @@ class HX711:
 
         self.read()
         self.filtered = self.read()
-        print('Gain par defaut = ', gain)
-
+        print('Gain & initial value set')
+    
     def is_ready(self):
         return self.pOUT() == 0
 
@@ -47,21 +45,31 @@ class HX711:
             enable_irq(state)
             result = (result << 1) | self.pOUT()
 
+        result = ~result
         # shift back the extra bits
         result >>= self.GAIN
 
         # check sign
-        if result > 0x7fffff:
-            result -= 0x1000000
+#         if result > 0x7fffff:
+#             result -= 0x1000000
+        if result & 0x800000:
+             result -= 1 << 24
 
         return result
 
-    def read_average(self, times=3):
+    def read_average(self, times=5):
         sum = 0
         for i in range(times):
             sum += self.read()
         return sum / times
 
+    def make_average(self, times=20):
+        sum=0
+        for i in range(times):
+            sum += self.read()
+        ssum = (sum / times)/1000
+        return '%.1f' %(ssum)
+    
     def read_lowpass(self):
         self.filtered += self.time_constant * (self.read() - self.filtered)
         return self.filtered
@@ -75,7 +83,6 @@ class HX711:
     def tare(self, times=15):
         sum = self.read_average(times)
         self.set_offset(sum)
-        print('Tare effectuee')
 
     def set_scale(self, scale):
         self.SCALE = scale
@@ -83,7 +90,7 @@ class HX711:
     def set_offset(self, offset):
         self.OFFSET = offset
 
-    def set_time_constant(self, time_constant=None):
+    def set_time_constant(self, time_constant = None):
         if time_constant is None:
             return self.time_constant
         elif 0 < time_constant < 1.0:
