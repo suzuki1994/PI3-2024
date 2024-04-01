@@ -1,14 +1,30 @@
-from esp_hx711 import HX711
-from time import *
+from hx711 import HX711  # Assuming you saved the class in hx711_custom.py
 
-hx711 = HX711(25, 26)   # DOUT= broche 25 (D3) et SCK = broche 26(D2)
 
-hx711.tare()            # permet de ne pas prendre en compte le poids à vide
-sleep_ms(2000)
+# Pin configuration
+DATA_PIN = 2
+SCK_PIN = 4
 
-hx711.set_scale(1955)   # permet d'afficher des grammes
+# Initialize the HX711 object
+hx = HX711(DATA_PIN, SCK_PIN)
 
+hx.set_scale(10)
+
+xvar = 0
+# Main function
 while True:
-    masse = hx711.get_units()
-    print("masse =", masse)
-    sleep_ms(1000)
+    hx.tare()
+    read=hx.read()
+    average=hx.read_average()
+    value=hx.make_average()
+    
+    if xvar==0:
+        xvar=value
+    
+    output = float(value)-float(xvar)
+    
+    print('loop 5: ', read)
+    print('loop 40: ', average)
+    print('kg: ', value, '->', output)
+    print('---------------')
+
