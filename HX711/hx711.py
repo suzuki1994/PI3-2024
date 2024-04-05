@@ -1,3 +1,4 @@
+#Library Hx711, the original is on https://github.com/robert-hh/hx711
 from machine import Pin, enable_irq, disable_irq, idle
 
 class HX711:
@@ -52,7 +53,7 @@ class HX711:
         # check sign
 #         if result > 0x7fffff:
 #             result -= 0x1000000
-        if result & 0x800000:
+        if result & 0x800000:  #If your results are negative, use this  
              result -= 1 << 24
 
         return result
@@ -63,7 +64,7 @@ class HX711:
             sum += self.read()
         return sum / times
 
-    def make_average(self, times=20):
+    def make_average(self, times=3):
         sum=0
         for i in range(times):
             sum += self.read()
