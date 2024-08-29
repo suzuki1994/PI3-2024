@@ -1,2 +1,2 @@
-# Módulo da balança completo com conexão WI-FI
+# Módulo da balança completo com conexão WI-FI (ESP32)
 
