@@ -2,5 +2,17 @@
 
 Para o treinamento da IA foram selecionados os seguintes alimentos:
  * Alface
- * arroz
- 
+ * Arroz
+ * Banana
+ * Batata
+ * Carne vermelha
+ * Cebola
+ * Feijão
+ * Carne de frango
+ * Laranja
+ * Leite
+ * Maçã
+ * Melancia
+ * Morango
+ * Ovo
+ * Tomate
