@@ -1,3 +1,3 @@
-# PI3-2024
+# PI3-2024 - AI FOOD -  Sistema de detecção de alimentos com inteligência artificial integrado com balança
 
-Food recognition using computer vision integrated with a weighing system
+Coloco os nomes? professores? 
