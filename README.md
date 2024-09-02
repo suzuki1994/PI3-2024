@@ -1,14 +1,19 @@
 # PI3-2024 - AI FOOD -  Sistema de detecção de alimentos com inteligência artificial integrado com balança
 
-Coloco os nomes? professores? 
+**INSTITUTO FEDERAL DE SANTA CATARINA**
+
+**Unidade Curricular:**  Projeto Integrador 3 
+
+**Professor:**  Robinson Pizzio e Matheus Leitzke Pinto 
+
+**Alunos:**  Eric Monteiro dos Reis e Matheus Sandim Gonçalves
 
 * [Introdução](#introdução)
 * [Componentes utilizados](#componentes-utilizados)
 
   
 ## Introdução
- 
-
+O intuito desse projeto é utilizar da IA para facilitar a vida de quem faz um diário calórico. A IA vai utilizar câmera do celular para reconhecer o alimento e com o peso que a balança detecta é possível através de uma tabela as proteínas, carboidratos e gorduras do alimento em questão, esses valores são armazenados em um servidor com o resumo calórico de cada úsuario. 
 
 ## Componentes utilizados
 
