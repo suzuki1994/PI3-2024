@@ -13,7 +13,7 @@
 
   
 ## Introdução
-O intuito desse projeto é utilizar da IA para facilitar a vida de quem faz um diário calórico. A IA vai utilizar câmera do celular para reconhecer o alimento e com o peso que a balança detecta é possível através de uma tabela as proteínas, carboidratos e gorduras do alimento em questão, esses valores são armazenados em um servidor com o resumo calórico de cada úsuario. 
+O intuito desse projeto é utilizar da IA para facilitar a vida de quem faz um diário calórico. A IA vai utilizar câmera do celular para reconhecer o alimento e com o peso que a balança detecta é possível através de uma tabela as proteínas, carboidratos e gorduras do alimento em questão, esses valores são armazenados em um servidor com o resumo calórico de cada usuário. 
 
 ## Componentes utilizados
 
