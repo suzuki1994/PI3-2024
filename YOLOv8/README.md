@@ -2,23 +2,23 @@
 
 
 Para o treinamento da IA foram selecionados os seguintes alimentos:
- * Alface
- * Arroz
- * Banana
- * Batata
- * Carne vermelha
- * Cebola
- * Feijão
- * Carne de frango
- * Laranja
- * Leite
- * Maçã
- * Melancia
- * Morango
- * Ovo
- * Tomate
+ * Alface (001 a 100)
+ * Arroz (101 a 200)
+ * Banana (201 a 300)
+ * Batata (301 a 400)
+ * Carne vermelha (401 a 500)
+ * Cebola (501 a 600)
+ * Feijão (601 a 700)
+ * Carne de frango (701 a 800)
+ * Laranja (801 a 900)
+ * Leite (901 a 1000)
+ * Maçã (1001 a 1100)
+ * Melancia (1101 a 1200)
+ * Morango (1201 a 1300)
+ * Ovo (1301 a 1400)
+ * Tomate (1401 a 1500)
 
-Para cada alimento foi selecionado 100 imagens, nas quais 70 de treinamento, 20 de validação e 10 de teste. Totalizando assim 1500 imagens.
+Foi utilizadas fotos de alimentos de diversas fontes, para melhor organizalas foi padronizado uma faixa de numeração para cada alimento, onde cada um tem 100 imagens, nas quais 70 de treinamento, 20 de validação e 10 de teste. Totalizando assim 1500 imagens. Para renomear os arquivos de forma prática utilizamos do algoritimo presente no arquivo "rename_image_files"
 
 As imagens da parte de treinamento e validação possuem os labels de onde e qual alimento está presente da imagem. Nas imagens de teste elas não possuem os labels, pois é a IA que deve localizar o alimento e o identifica-lo.
 
