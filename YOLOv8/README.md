@@ -19,6 +19,7 @@ Para o treinamento da IA foram selecionados os seguintes alimentos:
  * Tomate
 
 Para cada alimento foi selecionado 100 imagens, nas quais 70 de treinamento, 20 de validação e 10 de teste. Totalizando assim 1500 imagens.
+
 As imagens da parte de treinamento e validação possuem os labels de onde e qual alimento está presente da imagem. Nas imagens de teste elas não possuem os labels, pois é a IA que deve localizar o alimento e o identifica-lo.
 
 Os gráficos a seguir foram obtidos com o nosso melhor treinamento
@@ -28,3 +29,7 @@ Os gráficos a seguir foram obtidos com o nosso melhor treinamento
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/P_curva.png)
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CFN.png)
+
+Vale a pena salientar que as limitações na confiaça da IA em reconhecer os alimentos se deve termos escolhido "poucas" imagens para cada categoria, quanto mais imagens é utilizado no treinamento da IA melhor a precisão em reconhecer objetos.
+
+Outro ponto que vale a pena citar é em relação ao último gráfico, pois nele mostra a precisão de cada alimento de maneira númerica,algumas vezes a IA confunde um alimento com o outro ou com o fundo da imagem.O background (fundo) é um erro que pode ser diminuido se tivessemos colocado imagens sem label durante o treinamento. 
