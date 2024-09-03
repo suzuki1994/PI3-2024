@@ -7,11 +7,6 @@
 **Professor:**  Robinson Pizzio e Matheus Leitzke Pinto 
 
 **Alunos:**  Eric Monteiro dos Reis e Matheus Sandim Gonçalves
-
-* [Introdução](#Introdução)
-* [Tecnologias utilizadas](# Tecnologias utilizadas)
-* [Desenvolvimento e resultados](# Desenvolvimento e resultados)
-* [Dificuldades](#Dificuldades)
   
 ## Introdução
 Este projeto propõe a utilização de inteligência artificial (IA) para monitorar o consumo calórico diário dos usuários, para isso integra um modelo de IA com uma câmera de celular e uma balança, permitindo que os usuários identifiquem automaticamente os alimentos que consomem e, com base no peso detectado pela balança, obtenham informações nutricionais detalhadas, como a quantidade de proteínas, carboidratos e gorduras. Esses dados são então armazenados em um servidor, onde um resumo calórico é gerado para cada usuário, proporcionando um acompanhamento preciso e contínuo de sua dieta diária.
