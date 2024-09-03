@@ -9,8 +9,8 @@
 **Alunos:**  Eric Monteiro dos Reis e Matheus Sandim Gonçalves
 
 * [Introdução](#Introdução)
-* [Tecnologias utilizadas](#Tecnologias utilizadas)
-* [Desenvolvimento e resultados](#Desenvolvimento e resultados)
+* [Tecnologias utilizadas](# Tecnologias utilizadas)
+* [Desenvolvimento e resultados](# Desenvolvimento e resultados)
 * [Dificuldades](#Dificuldades)
   
 ## Introdução
