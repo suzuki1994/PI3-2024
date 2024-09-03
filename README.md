@@ -13,7 +13,11 @@
 
   
 ## Introdução
-O intuito desse projeto é utilizar da IA para facilitar a vida de quem faz um diário calórico. A IA vai utilizar câmera do celular para reconhecer o alimento e com o peso que a balança detecta é possível através de uma tabela as proteínas, carboidratos e gorduras do alimento em questão, esses valores são armazenados em um servidor com o resumo calórico de cada usuário. 
+O aumento da conscientização sobre a importância de uma alimentação balanceada tem levado muitas pessoas a adotarem o hábito de monitorar sua ingestão calórica diária. No entanto, esse processo pode ser trabalhoso e suscetível a erros, especialmente quando envolve a identificação precisa dos alimentos consumidos e a medição de suas porções. Este projeto propõe a utilização de inteligência artificial (IA) para automatizar e simplificar esse processo.
+
+O sistema desenvolvido integra um modelo de IA com uma câmera de celular e uma balança, permitindo que os usuários identifiquem automaticamente os alimentos que consomem e, com base no peso detectado pela balança, obtenham informações nutricionais detalhadas, como a quantidade de proteínas, carboidratos e gorduras. Esses dados são então armazenados em um servidor, onde um resumo calórico é gerado para cada usuário, proporcionando um acompanhamento preciso e contínuo de sua dieta diária.
+
+Este projeto visa não apenas facilitar o registro de calorias, mas também fornecer uma ferramenta prática e acessível para o gerenciamento da alimentação, contribuindo para a promoção de hábitos alimentares mais saudáveis.
 
 ## Componentes utilizados
 
