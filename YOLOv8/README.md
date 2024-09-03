@@ -4,7 +4,7 @@ YOLOv8 (You Only Look Once version 8) é a mais recente iteração da popular fa
 
 O modelo YOLOv8 é caracterizado por sua abordagem "single-shot," onde a detecção e a classificação dos objetos são realizadas em uma única etapa, permitindo que o algoritmo processe imagens em alta velocidade, o que é crucial para aplicações em tempo real, como vigilância por vídeo, direção autônoma e robótica.
 
-Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos, cada um com uma faixa numérica específica:
+Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos. Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos, cada um com uma faixa numérica específica:
  * Alface (001 a 100)
  * Arroz (101 a 200)
  * Banana (201 a 300)
