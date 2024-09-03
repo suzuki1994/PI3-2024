@@ -8,3 +8,5 @@ Podemos observar abaixo a estrutura da balança com a célula de carga
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Balan%C3%A7a%20side%20view.jpeg)
 
+
+![](https://www.toledobrasil.com/blob/upload/peso-padrao-2.gif)
