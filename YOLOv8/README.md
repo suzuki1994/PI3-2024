@@ -29,8 +29,6 @@ Os gráficos a seguir ilustram os resultados obtidos com o melhor treinamento re
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/F1_curva.png)
 
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/P_curva.png)
-
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CFN.png)
 
 É importante ressaltar que as limitações na confiança da IA em reconhecer os alimentos estão associadas ao número reduzido de imagens utilizadas para cada categoria. Quanto maior o número de imagens disponíveis para o treinamento da IA, maior a precisão no reconhecimento dos objetos.
