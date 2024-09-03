@@ -22,13 +22,21 @@ A célula de carga utilizada é de 1KG (podendo ser substituída por uma de 3KG 
 A implementação do banco de dados foi realizada utilizando os serviços do Amazon RDS, devido ao convênio com o IFSC e à fácil disponibilidade de exemplos e documentação.
 
 ## Desenvolvimento e resultados
-O desenvolvimento da balança e do dataset da IA foram realizados em paralelo. O dataset consiste em 1500 imagens de 15 alimentos sendo que 70 para treinamento, 20 para validação do treinamento e 10 para teste. Observa-se a seguir os resultados do treinamento da IA, reconhecendo o alimento apresentado na maior parte das tentativas, apesar de algumas vezes ele não reconhecer ou confundir com outro alimento do treinamento. 
+O desenvolvimento da balança e do dataset da IA foi realizado em paralelo. O dataset consiste em 1.500 imagens de 15 alimentos, com 70% das imagens destinadas ao treinamento, 20% à validação e 10% aos testes. A seguir, observam-se os resultados do treinamento da IA, que reconheceu corretamente o alimento apresentado na maioria das tentativas. No entanto, em algumas ocasiões, a IA não conseguiu reconhecer ou confundiu o alimento com outro presente no treinamento.
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/resultado.jpg)
 
-A figura abaixo apresenta a balança em pleno funcionamento, restando apenas implementar o envio do peso medido por meio de conexão WIFI
+A figura abaixo mostra a balança em pleno funcionamento. O próximo passo foi implementar o envio do peso medido por meio de conexão Wi-Fi.
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Balan%C3%A7a%20funcionando.png)
 
+
+##colocar a parte do AWS
+
+
 ## Dificuldades 
-O nosso dataset ficou grande (muitas opções de alimentos), mas deveriamos ter colocado mais imagens de cada alimentos, pois 
+Encontramos algumas dificuldades durante o projeto, algumas já resolvemos e outras deixaremos registradas para futuras atualizações. Na hora de integrar a balança com o software do projeto (enviar o valor medido por Wi-Fi), tivemos problemas com o IP do ESP32, que nem sempre era o mesmo ao se conectar à rede.
+
+Em relação ao dataset, a IA confundia alguns alimentos visualmente semelhantes, como peito de frango com feijão, devido ao formato, ou leite com uma parede branca. Para mitigar esses problemas, treinamos o modelo com variações das imagens do dataset original, como rotações, alterações na claridade e no HUE das cores. Embora tenha havido melhorias, acreditamos que um dataset maior, incluindo imagens de background (imagens sem rótulo no treinamento), provavelmente aumentaria ainda mais a precisão da IA.
+
+A principal dificuldade deste projeto foi implementar o banco de dados na AWS, pois tivemos que aprender essa tecnologia do zero, o que resultou em várias tentativas e erros.
