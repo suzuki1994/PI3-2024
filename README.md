@@ -151,7 +151,7 @@ A tabela de diário alimentar armazena os registros de consumo de alimentos por 
 ## Desenvolvimento e resultados
  Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
 
-Foram utilizadas imagens de diversas fontes para representar cada alimento. Para facilitar a organização, estabeleceu-se uma faixa numérica padronizada de 100 imagens por alimento, distribuídas da seguinte forma: 70 para treinamento, 20 para validação e 10 para teste. Para fazer as labels das imagens utilizamos o site do https://app.cvat.ai/. O número toral de imagens que foram uitilzadas foi de 1500, pois utilizamos 15 alimentos diferentes. 
+Foram utilizadas imagens de diversas fontes para representar cada alimento. Para facilitar a organização, estabeleceu-se uma faixa numérica padronizada de 100 imagens por alimento, distribuídas da seguinte forma: 70% para treinamento, 20% para validação e 10% para teste (Essa porcentagem é recomendada como uma boa prática no treinamento de um dataset)  . Para fazer as labels das imagens utilizamos o site do https://app.cvat.ai/. O número toral de imagens que foram uitilzadas foi de 1500, pois utilizamos 15 alimentos diferentes. 
 
 Na imagem abaixo, há um exemplo de marcação dos rótulos no CVAT (Computer Vision Annotation Tool), onde é necessário marcar retângulos nos objetos de interesse. Esse site acelerou bastante a realizarmos as marcações de labels nos alimentos.
 
