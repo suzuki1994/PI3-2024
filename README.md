@@ -24,6 +24,8 @@ A implementação do banco de dados foi realizada utilizando os serviços do Ama
 ## Desenvolvimento e resultados
 O desenvolvimento da balança e do dataset da IA foi realizado em paralelo. O dataset consiste em 1.500 imagens de 15 alimentos, com 70% das imagens destinadas ao treinamento, 20% à validação e 10% aos testes. A seguir, observam-se os resultados do treinamento da IA, que reconheceu corretamente o alimento apresentado na maioria das tentativas. No entanto, em algumas ocasiões, a IA não conseguiu reconhecer ou confundiu o alimento com outro presente no treinamento.
 
+![teste](Balança/README.md)
+
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/resultado.jpg)
 
 A figura abaixo mostra a balança em pleno funcionamento. O próximo passo foi implementar o envio do peso medido por meio de conexão Wi-Fi.
