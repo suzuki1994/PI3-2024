@@ -22,9 +22,9 @@ A célula de carga utilizada é de 1KG (podendo ser substituída por uma de 3KG 
 A implementação do banco de dados foi realizada utilizando os serviços do Amazon RDS, devido ao convênio com o IFSC e à fácil disponibilidade de exemplos e documentação.
 
 ## Desenvolvimento e resultados
-O desenvolvimento da balança e do dataset da IA foi realizado em paralelo. O dataset consiste em 1.500 imagens de 15 alimentos, com 70% das imagens destinadas ao treinamento, 20% à validação e 10% aos testes. A seguir, observam-se os resultados do treinamento da IA, que reconheceu corretamente o alimento apresentado na maioria das tentativas. No entanto, em algumas ocasiões, a IA não conseguiu reconhecer ou confundiu o alimento com outro presente no treinamento.
+O desenvolvimento da balança ([balança](Balança/README.md)) e do dataset da IA foi realizado em paralelo. O dataset consiste em 1.500 imagens de 15 alimentos, com 70% das imagens destinadas ao treinamento, 20% à validação e 10% aos testes. A seguir, observam-se os resultados do treinamento da IA, que reconheceu corretamente o alimento apresentado na maioria das tentativas. No entanto, em algumas ocasiões, a IA não conseguiu reconhecer ou confundiu o alimento com outro presente no treinamento.
 
-[teste](Balança/README.md)
+
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/a0ba1a532e0eedd0a04ab466d8b57646ec022bbe/Figuras/resultado.jpg)
 
