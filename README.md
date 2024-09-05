@@ -13,7 +13,7 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 
 ## Tecnologias utilizadas
 
-![](https://github.com/suzuki1994/PI3-2024/blob/a0ba1a532e0eedd0a04ab466d8b57646ec022bbe/Figuras/Tecnologias_do_projeto.png)
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Tecnologias_projeto.png)
 
 
 * YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos.
