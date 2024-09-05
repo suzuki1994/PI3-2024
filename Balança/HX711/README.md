@@ -11,4 +11,4 @@ O outro lado onde tem os pinos (GND DT SCK VCC) são conectados com o microcontr
 Neste projeto o pino 2 do ESP32 é o DT (data) e o pino 4 é o SCK (clock). Alimentação é 3.3V 
 
 
-![](Figuras/HX711.jpg)
+![](https://github.com/suzuki1994/PI3-2024/blob/282f6ae8c8375911f87fdac173b76ee60df269f3/Figuras/HX711.jpg)
