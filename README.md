@@ -40,6 +40,24 @@ Na diagonal principal, observa-se o quanto o algoritmo acertou na identificaçã
 Outro aspecto relevante é a análise do último gráfico, que apresenta a precisão de cada alimento de forma numérica. Observa-se que, em alguns casos, a IA confunde alimentos entre si ou com o fundo da imagem. A confusão com o background (fundo) poderia ser mitigada caso imagens sem labels tivessem sido incluídas no treinamento.
 
 # Hardware
+
+O hardware deste projeto consiste em uma balança digital com comunicação via Wi-Fi. Ela funciona a partir do sinal enviado por uma célula de carga, que é um transdutor resistivo capaz de converter a força aplicada em um sinal elétrico. No GIF abaixo, é demonstrada a simulação do funcionamento da célula de carga, onde uma força peso é aplicada, causando uma leve compressão na parte superior do sistema. Isso gera um sinal elétrico, que é amplificado pelo módulo HX711. Esse sinal é então enviado para o microcontrolador ESP32, que o converte em um valor numérico exibido no display LCD. No projeto, esse valor é enviado via Wi-Fi para ser utilizado no algoritmo, que calcula as calorias do alimento pesado e as armazena em um banco de dados.
+
+![](https://www.toledobrasil.com/blob/upload/peso-padrao-2.gif)
+
+O HX711 é um módulo conversor e amplificador de 24 bits que junto com uma célula de carga e um microcontrolador é possível montar uma balança digital. A célula de carga utilizada neste projeto é de uma 1KG, porém nada impede de substituir ela por uma de 3KG ou 5KG.
+
+![](https://github.com/suzuki1994/PI3-2024/blob/d35aea34d81d1e8f14764084d93dd8fd95840884/Figuras/Celula_de_carga.png)
+
+O HX711 possui um lado que deve ser conectado com a célula de carga (E+ E- A- A+ B- B+), onde E+ (VCC fio vermelho) e E- (GND fio preto) e as saídas (A+ A-) e (B+ e B-), onde utilizamos as saídas A+ (fio verde) e A- (fio branco).
+O outro lado onde tem os pinos (GND DT SCK VCC) são conectados com o microcontrolador (ESP32).
+Neste projeto o pino 2 do ESP32 é o DT (data) e o pino 4 é o SCK (clock). Alimentação é 3.3V 
+
+![](https://github.com/suzuki1994/PI3-2024/blob/282f6ae8c8375911f87fdac173b76ee60df269f3/Figuras/HX711.jpg)
+
+
+
+
 A célula de carga utilizada é de 1KG (podendo ser substituída por uma de 3KG ou 5KG). Para a comunicação com o microcontrolador (ESP32), utilizamos o módulo [HX711](Balança/HX711)(amplificador de 24 bits), pois, além de ser vendido junto com a célula de carga, ele conta com diversos exemplos e tutoriais disponíveis na internet. Com o intuito de facilitar a visualização durante o projeto dos valores medidos pela balança, bem como proporcionar maior conveniência ao usuário, implementamos um display [LCD](Balança/LCD) 16x2 com o módulo I2C.
 
 A implementação do banco de dados foi realizada utilizando os serviços do Amazon RDS, devido ao convênio com o IFSC e à fácil disponibilidade de exemplos e documentação.
