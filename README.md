@@ -13,7 +13,7 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 
 ## Tecnologias utilizadas
 
-![](Figuras/Tecnologias do projeto .png)
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Tecnologias%20do%20projeto%20.png)
 
 A linguagem de programação que utilizamos foi o Python, devido à nossa familiaridade com ela e sua praticidade. Para treinar a IA, utilizamos o YOLOv8 (You Only Look Once version 8), que é um modelo de detecção de objetos onde a detecção e a classificação do objeto são realizadas em uma única etapa, tornando o algoritmo mais rápido no processamento de imagens.
 
@@ -26,7 +26,7 @@ O desenvolvimento da balança e do dataset da IA foi realizado em paralelo. O da
 
 [teste](Balança/README.md)
 
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/resultado.jpg)
+![](Figuras/resultado.jpg)
 
 A figura abaixo mostra a balança em pleno funcionamento. O próximo passo foi implementar o envio do peso medido por meio de conexão Wi-Fi.
 
