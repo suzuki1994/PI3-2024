@@ -15,12 +15,17 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Tecnologias.png)
 
+### Python
+Python é uma linguagem de programação de software muitas vezes utilizadas no ambito da criação de software, automação de tarefas, análise de dados, machine-learning, etc. Python é uma linguagem de propósito geral conhecida pela sua sintaxe simples e fácil de ler, pois se assemelha muito a linguagem natural. Sua versatilidade e facilidade de prototipação rápida faz com que ela seja uma das linguagens de programação mais utilizadas da atualidade.
 
-* YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos.
+### YOLOv8
+YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos.
 
-* MicroPython é uma implementação enxuta da linguagem Python projetada para rodar em microcontroladores e dispositivos embarcados com recursos limitados, como ESP32 e ESP8266. MicroPython oferece acesso a hardware, como pinos GPIO, sensores, e comunicação Wi-Fi, e inclui bibliotecas para tarefas comuns em sistemas embarcados.
+### MicroPython
+MicroPython é uma implementação enxuta da linguagem Python projetada para rodar em microcontroladores e dispositivos embarcados com recursos limitados, como ESP32 e ESP8266. MicroPython oferece acesso a hardware, como pinos GPIO, sensores, e comunicação Wi-Fi, e inclui bibliotecas para tarefas comuns em sistemas embarcados.
 
-* O Amazon RDS (Relational Database Service) é um serviço gerenciado da AWS que facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem. O RDS automatiza tarefas como backup, atualização de software, escalabilidade de hardware e recuperação de falhas, permitindo que os usuários se concentrem na otimização de suas aplicações.
+### Amazon RDS
+O Amazon RDS (Relational Database Service) é um serviço gerenciado da AWS que facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem. O RDS automatiza tarefas como backup, atualização de software, escalabilidade de hardware e recuperação de falhas, permitindo que os usuários se concentrem na otimização de suas aplicações.
 
 # Hardware
 
