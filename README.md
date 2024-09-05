@@ -111,7 +111,7 @@ Foram utilizadas imagens de diversas fontes para representar cada alimento. Para
 
 Na imagem abaixo, há um exemplo de marcação dos rótulos no CVAT (Computer Vision Annotation Tool), onde é necessário marcar retângulos nos objetos de interesse. Esse site acelerou bastante a realizarmos as marcações de labels nos alimentos.
 
-[](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CVAT.png)
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CVAT.png)
 
 As imagens utilizadas para o treinamento e validação continham labels indicando a presença e identificação do alimento. Já nas imagens de teste, os labels não estavam presentes, sendo a tarefa da IA localizar e identificar corretamente os alimentos.
 
