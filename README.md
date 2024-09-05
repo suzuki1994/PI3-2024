@@ -79,17 +79,30 @@ A figura abaixo mostra a balança em pleno funcionamento. Os dados são enviados
 # Software
 
 ## Amazon RDS
-Para a implementação do banco de dados utilizado no projeto, primeiro é necessário possuir uma conta no AWS. O RDS é um serviço que possui tiers gratuitos onde é possível criar bancos de dados de forma gratuita, porém dependendo da configuração utilizada ao criar o banco, o serviço pode possuir gastos relevantes.
-Para a criação do banco foi utilizado uma conta do AWS educacional, obtida através de parceria com o IFSC. 
+Para a implementação do banco de dados utilizado no projeto, primeiro é necessário possuir uma conta no AWS. O Amazon RDS é um serviço que possui plano gratuito, onde é possível criar bancos de dados sem custos, porém dependendo da configuração utilizada ao criar o banco, o serviço pode possuir gastos relevantes.
+Neste projeto, utilizamos uma conta do AWS educacional, obtida através de parceria com o IFSC. Para este projeto optamos pela utilização de um banco de dados relacional, visto que é necessário o armazenamento da informação de diversas entidades, com elas se relacionando entre si. 
 
-Para este projeto optamos pela utilização de um banco de dados relacional PostgreSQL, visto que é necessário o armazenamento da informação de diversas entidades, com elas se relacionando entre si. 
+### Passos para a criação do banco de dados no AWS RDS:
+1. Realizar o login na conta do AWS.
+2. Buscar por RDS na busca de serviços localizada no topo da página.
+3. No painel do RDS, arraste para baixo até encontrar a opção "Create Database".
+4. Selecione o Engine (utilizamos o PostgreSQL).
+5. Em Template selecione "Free tier".
+6. Em Settings configure o nome da instância do banco de dados, um usuário admin e a senha.
+7. Em conectividade garanta que na parte de Publicly accessible está marcado a opção "Yes", para que possamos acessar o banco de dados remotamente.
+8. Escolha um nome para o banco de dados em Additional Configuration
+9. O resto das opções foi utilizada as padrões.
+10. Clicke em "Create Database".
 
-Para a implementação do projeto foi desenhado uma arquitetura de banco contendo 3 tabelas principais:
-* Tabela de usuários
-* Tabela de alimentos
-* Tabela de alimentos consumidos
+Após alguns minutos, o banco de dados estará disponível para conexão.
 
-Na tabela de usuários foram 
+### Ferramentas utilizadas para comunicação com o banco de dados:
+* psycopg2:  É um adaptador popular e amplamente utilizado para conectar aplicações Python a bancos de dados PostgreSQL. Utilizando essa biblioteca podemos executar comandos SQL, permitindo que possamos interagir de forma eficiente com o banco de dados via código Python.
+
+* psql: É uma interface de linha de comando utilizado para interagir com o banco de dados e utilizamos ela principalmente para debug e testes do banco de dados. Segue abaixo uma imagem demonstrando a visualização de uma das tabelas utilizadas no projeto.
+
+
+
 
 ## Desenvolvimento e resultados
  Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
