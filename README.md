@@ -9,7 +9,7 @@
 **Alunos:**  Eric Monteiro dos Reis e Matheus Sandim Gonçalves
   
 ## Introdução
-Este projeto propõe a utilização de inteligência artificial (IA) para monitorar o consumo calórico diário dos usuários, para isso integra um modelo de IA com uma câmera de celular e uma balança, permitindo que os usuários identifiquem automaticamente os alimentos que consomem e, com base no peso detectado pela balança, obtenham informações nutricionais detalhadas, como a quantidade de proteínas, carboidratos e gorduras. Esses dados são então armazenados em um servidor, onde um resumo calórico é gerado para cada usuário, proporcionando um acompanhamento preciso e contínuo de sua dieta diária.
+Este projeto propõe a utilização de inteligência artificial (IA) para monitorar o consumo calórico diário dos usuários, para isso integra um modelo de IA com uma câmera de celular e uma balança, permitindo que os usuários identifiquem automaticamente os alimentos que consomem e, com base no peso detectado pela balança, obtenham informações nutricionais detalhadas, como a quantidade de proteínas, carboidratos e gorduras. Esses dados são então armazenados em um banco de dados na nuvem, onde um resumo calórico é gerado para cada usuário, proporcionando um acompanhamento preciso e contínuo de sua dieta diária.
 
 ## Tecnologias utilizadas
 
@@ -57,6 +57,20 @@ A figura abaixo mostra a balança em pleno funcionamento. Os dados são enviados
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/a0ba1a532e0eedd0a04ab466d8b57646ec022bbe/Figuras/Balan%C3%A7a_funcionando.png)
 
+# Software
+
+## Amazon RDS
+Para a implementação do banco de dados utilizado no projeto, primeiro é necessário possuir uma conta no AWS. O RDS é um serviço que possui tiers gratuitos onde é possível criar bancos de dados de forma gratuita, porém dependendo da configuração utilizada ao criar o banco, o serviço pode possuir gastos relevantes.
+Para a criação do banco foi utilizado uma conta do AWS educacional, obtida através de parceria com o IFSC. 
+
+Para este projeto optamos pela utilização de um banco de dados relacional PostgreSQL, visto que é necessário o armazenamento da informação de diversas entidades, com elas se relacionando entre si. 
+
+Para a implementação do projeto foi desenhado uma arquitetura de banco contendo 3 tabelas principais:
+* Tabela de usuários
+* Tabela de alimentos
+* Tabela de alimentos consumidos
+
+Na tabela de usuários foram 
 
 ## Desenvolvimento e resultados
  Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
