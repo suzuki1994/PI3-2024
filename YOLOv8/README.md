@@ -2,7 +2,7 @@
 
 YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos. Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
 
-Foram utilizadas imagens de diversas fontes para representar cada alimento. Para facilitar a organização, estabeleceu-se uma faixa numérica padronizada de 100 imagens por alimento, distribuídas da seguinte forma: 70 para treinamento, 20 para validação e 10 para teste. Para fazer as labels das imagens utilizamos o site do https://app.cvat.ai/  Os  Isso resultou em um total de 1500 imagens. O renomeio dos arquivos de imagem foi realizado de forma prática utilizando um algoritmo presente no arquivo "rename_image_files".
+Foram utilizadas imagens de diversas fontes para representar cada alimento. Para facilitar a organização, estabeleceu-se uma faixa numérica padronizada de 100 imagens por alimento, distribuídas da seguinte forma: 70 para treinamento, 20 para validação e 10 para teste. Para fazer as labels das imagens utilizamos o site do https://app.cvat.ai/. O número toral de imagens que foram uitilzadas foi de 1500, pois utilizamos 15 alimentos diferentes. 
 
 As imagens utilizadas para o treinamento e validação continham labels indicando a presença e identificação do alimento. Já nas imagens de teste, os labels não estavam presentes, sendo a tarefa da IA localizar e identificar corretamente os alimentos.
 
@@ -14,9 +14,9 @@ Mostra a pontuação F1 (média harmônica de precisão e recuperação) em dife
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CFN.png)
 
-Na diagonal principal, observa-se o quanto o algoritmo acertou na identificação dos alimentos. As cores mais claras indicam valores de predição mais baixos, resultantes de confusões com outros alimentos ou com o fundo da imagem. Exceto por maçã e cebola, os demais alimentos apresentaram uma precisão de pelo menos 70%, o que é uma média considerável. Podemos observar isso na prática na figura abaixo.
+Na diagonal principal, observa-se o quanto o algoritmo acertou na identificação dos alimentos. As cores mais claras indicam valores de predição mais baixos, resultantes de confusões com outros alimentos ou com o fundo da imagem. Exceto por maçã e cebola, os demais alimentos apresentaram uma precisão de pelo menos 70%, o que é uma média considerável. Podemos observar isso na prática na figura abaixo, onde a IA consegue reconhecer todos os alimentos apresentados.
 
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/resultado.jpg)
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/teste_IA.png)
 
 É importante ressaltar que as limitações na confiança da IA em reconhecer os alimentos estão associadas ao número reduzido de imagens utilizadas para cada categoria. Quanto maior o número de imagens disponíveis para o treinamento da IA, maior a precisão no reconhecimento dos objetos.
 
