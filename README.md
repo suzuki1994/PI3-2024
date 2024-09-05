@@ -109,6 +109,10 @@ Após alguns minutos, o banco de dados estará disponível para conexão.
 
 Foram utilizadas imagens de diversas fontes para representar cada alimento. Para facilitar a organização, estabeleceu-se uma faixa numérica padronizada de 100 imagens por alimento, distribuídas da seguinte forma: 70 para treinamento, 20 para validação e 10 para teste. Para fazer as labels das imagens utilizamos o site do https://app.cvat.ai/. O número toral de imagens que foram uitilzadas foi de 1500, pois utilizamos 15 alimentos diferentes. 
 
+Na imagem abaixo, há um exemplo de marcação dos rótulos no CVAT (Computer Vision Annotation Tool), onde é necessário marcar retângulos nos objetos de interesse. Esse site acelerou bastante a realizarmos as marcações de labels nos alimentos.
+
+[](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CVAT.png)
+
 As imagens utilizadas para o treinamento e validação continham labels indicando a presença e identificação do alimento. Já nas imagens de teste, os labels não estavam presentes, sendo a tarefa da IA localizar e identificar corretamente os alimentos.
 
 Os gráficos a seguir ilustram os resultados obtidos com o melhor treinamento realizado:
