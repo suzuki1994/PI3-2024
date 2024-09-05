@@ -13,7 +13,7 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 
 ## Tecnologias utilizadas
 
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Tecnologias%20do%20projeto%20.png)
+![](Figuras/Tecnologias do projeto .png)
 
 A linguagem de programação que utilizamos foi o Python, devido à nossa familiaridade com ela e sua praticidade. Para treinar a IA, utilizamos o YOLOv8 (You Only Look Once version 8), que é um modelo de detecção de objetos onde a detecção e a classificação do objeto são realizadas em uma única etapa, tornando o algoritmo mais rápido no processamento de imagens.
 
