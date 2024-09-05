@@ -17,7 +17,7 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 
 A linguagem de programação que utilizamos foi o Python, devido à nossa familiaridade com ela e sua praticidade. Para treinar a IA, utilizamos o YOLOv8 (You Only Look Once version 8), que é um modelo de detecção de objetos onde a detecção e a classificação do objeto são realizadas em uma única etapa, tornando o algoritmo mais rápido no processamento de imagens.
 
-A célula de carga utilizada é de 1KG (podendo ser substituída por uma de 3KG ou 5KG). Para a comunicação com o microcontrolador (ESP32), utilizamos o módulo HX711 ([HX711](Balança/HX711))(amplificador de 24 bits), pois, além de ser vendido junto com a célula de carga, ele conta com diversos exemplos e tutoriais disponíveis na internet. Com o intuito de facilitar a visualização durante o projeto dos valores medidos pela balança, bem como proporcionar maior conveniência ao usuário, implementamos um display LCD 16x2 com o módulo I2C.
+A célula de carga utilizada é de 1KG (podendo ser substituída por uma de 3KG ou 5KG). Para a comunicação com o microcontrolador (ESP32), utilizamos o módulo HX711 ([HX711](Balança/HX711))(amplificador de 24 bits), pois, além de ser vendido junto com a célula de carga, ele conta com diversos exemplos e tutoriais disponíveis na internet. Com o intuito de facilitar a visualização durante o projeto dos valores medidos pela balança, bem como proporcionar maior conveniência ao usuário, implementamos um display LCD 16x2 com o módulo I2C ([LCD](LCD)).
 
 A implementação do banco de dados foi realizada utilizando os serviços do Amazon RDS, devido ao convênio com o IFSC e à fácil disponibilidade de exemplos e documentação.
 
