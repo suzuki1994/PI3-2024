@@ -1,24 +1,8 @@
 # Treinamento e Resultados da Inteligência Artificial
 
-YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos. Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos, cada um com uma faixa numérica específica:
+YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos. Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
 
- * Alface (001 a 100)
- * Arroz (101 a 200)
- * Banana (201 a 300)
- * Batata (301 a 400)
- * Carne vermelha (401 a 500)
- * Cebola (501 a 600)
- * Feijão (601 a 700)
- * Carne de frango (701 a 800)
- * Laranja (801 a 900)
- * Leite (901 a 1000)
- * Maçã (1001 a 1100)
- * Melancia (1101 a 1200)
- * Morango (1201 a 1300)
- * Ovo (1301 a 1400)
- * Tomate (1401 a 1500)
-
-Foram utilizadas imagens de diversas fontes para representar cada alimento. Para facilitar a organização, estabeleceu-se uma faixa numérica padronizada de 100 imagens por alimento, distribuídas da seguinte forma: 70 para treinamento, 20 para validação e 10 para teste. Isso resultou em um total de 1500 imagens. O renomeio dos arquivos de imagem foi realizado de forma prática utilizando um algoritmo presente no arquivo "rename_image_files".
+Foram utilizadas imagens de diversas fontes para representar cada alimento. Para facilitar a organização, estabeleceu-se uma faixa numérica padronizada de 100 imagens por alimento, distribuídas da seguinte forma: 70 para treinamento, 20 para validação e 10 para teste. Para fazer as labels das imagens utilizamos o site do [](https://app.cvat.ai/)  Os  Isso resultou em um total de 1500 imagens. O renomeio dos arquivos de imagem foi realizado de forma prática utilizando um algoritmo presente no arquivo "rename_image_files".
 
 As imagens utilizadas para o treinamento e validação continham labels indicando a presença e identificação do alimento. Já nas imagens de teste, os labels não estavam presentes, sendo a tarefa da IA localizar e identificar corretamente os alimentos.
 
@@ -26,9 +10,11 @@ Os gráficos a seguir ilustram os resultados obtidos com o melhor treinamento re
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/F1_curva.png)
 
+Mostra a pontuação F1 (média harmônica de precisão e recuperação) em diferentes limites de confiança. Um pico mais alto sugere melhor desempenho do modelo.
+
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CFN.png)
 
-Na diagonal principal, observa-se o quanto o algoritmo acertou na identificação dos alimentos. As cores mais claras indicam valores de predição mais baixos, resultantes de confusões com outros alimentos ou com o fundo da imagem. Exceto por maçã e cebola, os demais alimentos apresentaram uma precisão de 70%, o que é uma média considerável. Podemos observar isso na prática na figura abaixo.
+Na diagonal principal, observa-se o quanto o algoritmo acertou na identificação dos alimentos. As cores mais claras indicam valores de predição mais baixos, resultantes de confusões com outros alimentos ou com o fundo da imagem. Exceto por maçã e cebola, os demais alimentos apresentaram uma precisão de pelo menos 70%, o que é uma média considerável. Podemos observar isso na prática na figura abaixo.
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/resultado.jpg)
 
