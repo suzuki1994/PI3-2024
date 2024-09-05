@@ -154,7 +154,54 @@ Após estabelecer a estrutura do banco de dados, foi desenvolvido um CRUD (Creat
 - **Atualização (Update):** Modifica registros existentes, permitindo, por exemplo, atualizar os detalhes de um alimento ou ajustar as informações de login do usuário.
 - **Deleção (Delete):** Remove registros do banco de dados, como a exclusão de alimentos ou a remoção de entradas do diário alimentar.
 
-Essas operações foram implementadas para facilitar a interação do usuário com o projeto, garantindo que todas as ações necessárias sejam suportadas de maneira eficiente e eficaz.
+Essas operações foram implementadas para facilitar a interação do usuário com o projeto, garantindo que todas as ações necessárias sejam suportadas de maneira eficiente e eficaz. As funções que performam as operações do CRUD se encontram nos arquivos ```food_diary_crud.py()```, ```users_crud.py()``` e ```ingredients_crud.py()```.
+
+### Conexão Remota com o Banco de Dados
+
+Após criar o CRUD, desenvolvemos uma função para conectar ao banco de dados remotamente, permitindo a interação com ele. O código utilizado para essa conexão é o seguinte:
+
+```python
+import psycopg2
+import config as creds
+
+PG_ENDPOINT = "pi3-db.cvridvfsmzai.us-east-1.rds.amazonaws.com"
+PG_DATABASE_NAME = "projeto_integrador_3_db"
+PG_USERNAME = "postgres"
+PG_PASSWORD = ""
+
+# NOTE (@eric_reis): Comando para acessar o banco de dados utilizando a lib "psql":
+# psql \
+#    --host=pi3-db.cvridvfsmzai.us-east-1.rds.amazonaws.com \
+#    --port=5432 \
+#    --username=postgres \
+#    --password \
+#    --dbname=projeto_integrador_3_db
+
+def connect():
+    connection_config = (
+        "host="
+        + creds.PG_ENDPOINT
+        + " port="
+        + "5432"
+        + " dbname="
+        + creds.PG_DATABASE_NAME
+        + " user="
+        + creds.PG_USERNAME
+        + " password="
+        + creds.PG_PASSWORD
+    )
+
+    print("\nInitializing connection to:")
+    print(connection_config)
+    conn = psycopg2.connect(connection_config)
+    print("Connected")
+    cursor = conn.cursor()
+
+    return conn, cursor
+````
+A função ```connnect()``` configura a conexão com o banco de dados utilizando as credenciais do banco de dados criado na AWS e estabelece um cursor para a execução de comandos SQL. Ela é utilizada em diversos pontos do projeto para estabelecer a conexão com o banco.
+
+O comando comentado foi o comando alternativo de debug e testes utilizado para acessar o banco de dados utilizando a ferramenta ```psql```.
 
 ## Desenvolvimento e resultados
  Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
