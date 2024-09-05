@@ -13,7 +13,7 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 
 ## Tecnologias utilizadas
 
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Tecnologias_projeto.png)
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Tecnologias.png)
 
 
 * YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos.
@@ -23,6 +23,8 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 * O Amazon RDS (Relational Database Service) é um serviço gerenciado da AWS que facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem. O RDS automatiza tarefas como backup, atualização de software, escalabilidade de hardware e recuperação de falhas, permitindo que os usuários se concentrem na otimização de suas aplicações.
 
 # Hardware
+
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Componentes.png)
 
 O hardware deste projeto consiste em uma balança digital com comunicação via Wi-Fi. Ela funciona a partir do sinal enviado por uma célula de carga, que é um transdutor resistivo capaz de converter a força aplicada em um sinal elétrico. No GIF abaixo, é demonstrada a simulação do funcionamento da célula de carga, onde uma força peso é aplicada, causando uma leve compressão na parte superior do sistema. Isso gera um sinal elétrico, que é amplificado pelo módulo HX711. Esse sinal é então enviado para o microcontrolador ESP32.
 
