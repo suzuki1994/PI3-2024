@@ -10,14 +10,14 @@
 
 [Introdução](#introdução)
 [Tecnologias utilizadas](#tecnologias-utilizadas)
-  * [Python](#Python)
-  * [YOLOv8](#YOLOv8)
-  * [MicroPython](#MicroPython)
-  * [AmazonRDS](#Amazon-RDS)
+  ** [Python](#Python)
+  ** [YOLOv8](#YOLOv8)
+  ** [MicroPython](#MicroPython)
+  ** [AmazonRDS](#Amazon-RDS)
 [Hardware](#Hardware)
 [Desenvolvimento e resultados](#Desenvolvimento-e-resultados)
 [Dificuldades](#Dificuldades)
-[Passos Futuros](Passos-futuros)
+[Passos Futuros](#Passos-futuros)
   
 ## Introdução
 Este projeto propõe a utilização de inteligência artificial (IA) para monitorar o consumo calórico diário dos usuários, para isso integra um modelo de IA com uma câmera de celular e uma balança, permitindo que os usuários identifiquem automaticamente os alimentos que consomem e, com base no peso detectado pela balança, obtenham informações nutricionais detalhadas, como a quantidade de proteínas, carboidratos e gorduras. Esses dados são então armazenados em um banco de dados na nuvem, onde um resumo calórico é gerado para cada usuário, proporcionando um acompanhamento preciso e contínuo de sua dieta diária.
