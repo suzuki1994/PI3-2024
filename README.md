@@ -18,7 +18,9 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 
 * YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos.
 
+* MicroPython é uma implementação enxuta da linguagem Python projetada para rodar em microcontroladores e dispositivos embarcados com recursos limitados, como ESP32 e ESP8266. MicroPython oferece acesso a hardware, como pinos GPIO, sensores, e comunicação Wi-Fi, e inclui bibliotecas para tarefas comuns em sistemas embarcados.
 
+* O Amazon RDS (Relational Database Service) é um serviço gerenciado da AWS que facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem. Ele oferece suporte a várias engines de banco de dados, como MySQL, PostgreSQL, MariaDB, Oracle e SQL Server. O RDS automatiza tarefas como backup, atualização de software, escalabilidade de hardware e recuperação de falhas, permitindo que os usuários se concentrem na otimização de suas aplicações. É amplamente utilizado para armazenar e gerenciar dados de forma confiável, com alta disponibilidade e segurança.
 
 # Hardware
 
