@@ -14,6 +14,7 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 ## Tecnologias utilizadas
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/a0ba1a532e0eedd0a04ab466d8b57646ec022bbe/Figuras/Tecnologias_do_projeto.png)
+
 No decorrer deste README iremos citar estas tecnologias utilizadas e o porque elas foram escolhidas
 
 # YOLO
