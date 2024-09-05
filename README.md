@@ -8,7 +8,6 @@
 
 **Alunos:**  Eric Monteiro dos Reis e Matheus Sandim Gonçalves
 
-#
 # Sumário 
 
 [Introdução](#introdução)
