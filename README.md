@@ -16,7 +16,7 @@ Este projeto propõe a utilização de inteligência artificial (IA) para monito
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Tecnologias.png)
 
 ### Python
-Python é uma linguagem de programação de software muitas vezes utilizadas no ambito da criação de software, automação de tarefas, análise de dados, machine-learning, etc. É uma linguagem de propósito geral conhecida pela sua sintaxe simples e fácil de ler, pois se assemelha muito a linguagem natural. Sua versatilidade e facilidade de prototipação rápida faz com que ela seja uma das linguagens de programação mais utilizadas da atualidade.
+Python é uma linguagem de programação de software muitas vezes utilizadas amplamente utilizada em diversas áreas, como desenvolvimento de software, automação de tarefas, análise de dados, aprendizado de máquina, etc. É uma linguagem de propósito geral conhecida pela sua sintaxe simples e fácil de ler, pois se assemelha muito a linguagem natural. Sua versatilidade e facilidade de prototipação rápida faz com que ela seja uma das linguagens de programação mais utilizadas da atualidade.
 
 ### YOLOv8
 YOLOv8 (You Only Look Once version 8) é um algoritmo de detecção de objetos em imagens. Embora o YOLOv8 não seja a versão mais recente, ele foi selecionado para este projeto devido à ampla disponibilidade de tutoriais e exemplos práticos, além de sua comprovada eficiência e rapidez na detecção de objetos em vídeos.
