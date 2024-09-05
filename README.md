@@ -80,6 +80,7 @@ A figura abaixo mostra a balança em pleno funcionamento. Os dados são enviados
 
 ## Amazon RDS
 Para a implementação do banco de dados utilizado no projeto, primeiro é necessário possuir uma conta no AWS. O Amazon RDS é um serviço que possui plano gratuito, onde é possível criar bancos de dados sem custos, porém dependendo da configuração utilizada ao criar o banco, o serviço pode possuir gastos relevantes.
+
 Neste projeto, utilizamos uma conta do AWS educacional, obtida através de parceria com o IFSC. Para este projeto optamos pela utilização de um banco de dados relacional, visto que é necessário o armazenamento da informação de diversas entidades, com elas se relacionando entre si. 
 
 ### Passos para a criação do banco de dados no AWS RDS:
@@ -97,9 +98,52 @@ Neste projeto, utilizamos uma conta do AWS educacional, obtida através de parce
 Após alguns minutos, o banco de dados estará disponível para conexão.
 
 ### Ferramentas utilizadas para comunicação com o banco de dados:
-* psycopg2:  É um adaptador popular e amplamente utilizado para conectar aplicações Python a bancos de dados PostgreSQL. Utilizando essa biblioteca podemos executar comandos SQL, permitindo que possamos interagir de forma eficiente com o banco de dados via código Python.
+- **Psycopg2**:  É um adaptador popular e amplamente utilizado para conectar aplicações Python a bancos de dados PostgreSQL. Utilizando essa biblioteca podemos executar comandos SQL, permitindo que possamos interagir de forma eficiente com o banco de dados via código Python.
 
-* psql: É uma interface de linha de comando utilizado para interagir com o banco de dados e utilizamos ela principalmente para debug e testes do banco de dados. Segue abaixo uma imagem demonstrando a visualização de uma das tabelas utilizadas no projeto.
+- **psql**: É uma interface de linha de comando utilizado para interagir com o banco de dados e utilizamos ela principalmente para debug e testes do banco de dados. Segue abaixo uma imagem demonstrando a visualização de uma das tabelas utilizadas no projeto.
+
+### Estrutura do banco de dados:
+A arquitetura do banco de dados foi desenhada com três tabelas principais:
+- **Tabela de Usuários**: Contém as informações de identificação dos usuários.
+- **Tabela de Alimentos**: Armazena dados dos alimentos cadastrados.
+- **Tabela de Alimentos Consumidos**: Registra os alimentos consumidos pelos usuários.
+
+#### Tabela de usuários
+A tabela de usuários possui os seguintes campos:
+- `id`: Identificador único do usuário.
+- `email`: Endereço de e-mail do usuário.
+- `password`: Senha de acesso do usuário.
+- `created_at`: Data de criação do registro.
+
+O e-mail e a senha são utilizados para autenticar o usuário no sistema. O `id` é utilizado como chave estrangeira em outras tabelas, garantindo a associação correta entre os dados de usuários e suas interações com os alimentos.
+
+#### Tabela de alimentos
+A tabela de alimentos armazena informações sobre os alimentos cadastrados no sistema. A tabela de alimentos possui os seguintes campos:
+- `id`: Identificador único do alimento.
+- `food_name`: Nome do alimento (ex: maçã, arroz).
+- `variety`: Variedade específica do alimento (ex: gala, integral).
+- `protein_per_gram`: Quantidade de proteína por grama do alimento, com até duas casas decimais.
+- `carbs_per_gram`: Quantidade de carboidratos por grama do alimento, com até duas casas decimais.
+- `fats_per_gram`: Quantidade de gordura por grama do alimento, com até duas casas decimais.
+- `calories_per_gram`: Quantidade de calorias por grama do alimento, com até duas casas decimais.
+- `last_updated`: Armazena a data e hora da última atualização do alimento. Por padrão, o valor é a data e hora atuais.
+- `additional_info`: Campo JSON que armazena informações adicionais sobre o alimento, como por exemplo quantidade de micro-nutrientes como potássio, magnésio, vitaminas, etc.
+
+> **Observação:** Foi criado uma restrição ao criar a tabela ,de forma a garantir que a combinação de `food_name` e `variety` seja sempre única na tabela.
+
+#### Tabela de diário alimentar
+A tabela de diário alimentar armazena os registros de consumo de alimentos por usuários. A tabela de diário alimentar possui os seguintes campos:
+- `id`: Identificador único da entrada de diário.
+- `user_id`: Identificador do usuário que realizou o registro, referenciando a tabela de usuários.
+- `food_id`: Identificador do alimento consumido, referenciando a tabela de alimentos.
+- `amount_grams`: Quantidade de alimento consumido em gramas, com até duas casas decimais.
+- `entry_date`: Data em que o alimento foi consumido.
+- `total_protein`: Quantidade total de proteína consumida, calculada com base na quantidade de alimento em gramas, com até duas casas decimais.
+- `total_carbs`: Quantidade total de carboidratos consumidos, com até duas casas decimais.
+- `total_fats`: Quantidade total de gordura consumida, com até duas casas decimais.
+- `total_calories`: Quantidade total de calorias consumidas, com até duas casas decimais.
+
+> **Observação:** `food_id` foi adicionado como chave estrangeira, referenciando à tabela de alimentos e garantindo a integridade entre os alimentos registrados e os consumidos.
 
 
 
