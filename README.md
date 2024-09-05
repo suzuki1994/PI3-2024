@@ -30,7 +30,7 @@ O desenvolvimento da balança e do dataset da IA foi realizado em paralelo. O da
 
 A figura abaixo mostra a balança em pleno funcionamento. O próximo passo foi implementar o envio do peso medido por meio de conexão Wi-Fi.
 
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Balan%C3%A7a%20funcionando.png)
+![](Figuras/Balança_funcionando.png)
 
 
 ##colocar a parte do AWS
