@@ -145,8 +145,16 @@ A tabela de diário alimentar armazena os registros de consumo de alimentos por 
 
 > **Observação:** `food_id` foi adicionado como chave estrangeira, referenciando à tabela de alimentos e garantindo a integridade entre os alimentos registrados e os consumidos.
 
+### Implementação de CRUD de operações
 
+Após estabelecer a estrutura do banco de dados, foi desenvolvido um CRUD (Create, Read, Update, Delete) para gerenciar as operações essenciais utilizando `psycopg2`. Este CRUD serve como uma interface de comunicação com o banco de dados PostgreSQL, permitindo a execução das seguintes operações:
 
+- **Criação (Create):** Adiciona novos registros no banco de dados, como novos alimentos, usuários ou entradas de diário alimentar.
+- **Leitura (Read):** Recupera e exibe dados armazenados, como informações sobre alimentos ou o histórico de consumo dos usuários.
+- **Atualização (Update):** Modifica registros existentes, permitindo, por exemplo, atualizar os detalhes de um alimento ou ajustar as informações de login do usuário.
+- **Deleção (Delete):** Remove registros do banco de dados, como a exclusão de alimentos ou a remoção de entradas do diário alimentar.
+
+Essas operações foram implementadas para facilitar a interação do usuário com o projeto, garantindo que todas as ações necessárias sejam suportadas de maneira eficiente e eficaz.
 
 ## Desenvolvimento e resultados
  Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
