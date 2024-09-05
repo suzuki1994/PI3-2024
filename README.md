@@ -9,7 +9,6 @@
 **Alunos:**  Eric Monteiro dos Reis e Matheus Sandim Gonçalves
 
 [Introdução](#introdução)
-
 [Tecnologias utilizadas](#tecnologias-utilizadas)
 
   * [Python](#Python)
@@ -18,11 +17,8 @@
   * [AmazonRDS](#Amazon-RDS)
     
 [Hardware](#Hardware)
-
 [Desenvolvimento e resultados](#Desenvolvimento-e-resultados)
-
 [Dificuldades](#Dificuldades)
-
 [Passos Futuros](#Passos-futuros)
   
 ## Introdução
