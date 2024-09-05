@@ -41,6 +41,7 @@ Neste projeto o pino 2 do ESP32 é o DT (data) e o pino 4 é o SCK (clock). Alim
 Para melhor visualização do valor medido pela balança foi utilizado um display de LCD 16x2 com um módulo I2C para comunicar com o ESP32. Os pinos utilizados foram o 22 (SCL) e o pino 21 (SCA). Já possuiamos este display o que facilitou na sua escolha para o projeto.
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/LCD_16x2_m%C3%B3dulo_I2C.png)
+
 A célula de carga foi montada em duas placas de plástico que foram recicladas de uma antiga placa, a figura abaixo podemos oberservar a visão lateral da balança 
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Balan%C3%A7a%20side%20view.jpeg)
