@@ -159,9 +159,17 @@ Essas operações foram implementadas para facilitar a interação do usuário c
 ## Desenvolvimento e resultados
  Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
 
-Foram utilizadas imagens de diversas fontes para representar cada alimento. Para facilitar a organização, estabeleceu-se uma faixa numérica padronizada de 100 imagens por alimento, distribuídas da seguinte forma: 70% para treinamento, 20% para validação e 10% para teste (Essa porcentagem é recomendada como uma boa prática no treinamento de um dataset)  . Para fazer as labels das imagens utilizamos o site do https://app.cvat.ai/. O número total de imagens que foram uitilizadas foi de 1500, pois utilizamos 15 alimentos diferentes. 
+O dataset é composto por 1500 imagens, distribuídas entre os alimentos selecionados. A organização dos dados segue a seguinte divisão:
 
-Na imagem abaixo, há um exemplo de marcação dos rótulos no CVAT (Computer Vision Annotation Tool), onde é necessário marcar retângulos nos objetos de interesse. Esse site acelerou bastante a realizarmos as marcações de labels nos alimentos.
+ * Treinamento: 70% (1050 imagens)
+ * Validação: 20% (300 imagens)
+ * Teste: 10% (150 imagens)
+   
+Esta divisão é uma boa prática recomendada para garantir que o modelo seja treinado, validado e testado adequadamente.
+
+Para a marcação dos rótulos, utilizamos a ferramenta CVAT (Computer Vision Annotation Tool). Esta ferramenta ajudou a acelerar o processo de rotulagem ao permitir a marcação precisa de retângulos ao redor dos alimentos nas imagens.
+
+Abaixo está um exemplo de como os rótulos são marcados no CVAT:
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CVAT.png)
 
