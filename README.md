@@ -46,7 +46,44 @@ MicroPython é uma implementação enxuta da linguagem Python projetada para rod
 ### Amazon RDS
 O Amazon RDS (Relational Database Service) é um serviço gerenciado da AWS que facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem. O RDS automatiza tarefas como backup, atualização de software, escalabilidade de hardware e recuperação de falhas, permitindo que os usuários se concentrem na otimização de suas aplicações.
 
-# Hardware
+# Desenvolvimento e resultados
+
+## Treinamento da Inteligência Artificial
+Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
+
+O dataset é composto por 1500 imagens, distribuídas entre os alimentos selecionados. A organização dos dados segue a seguinte divisão:
+
+ * Treinamento: 70% (1050 imagens)
+ * Validação: 20% (300 imagens)
+ * Teste: 10% (150 imagens)
+   
+Esta divisão é uma boa prática recomendada para garantir que o modelo seja treinado, validado e testado adequadamente.
+
+Para a marcação dos rótulos, utilizamos a ferramenta CVAT (Computer Vision Annotation Tool). Esta ferramenta ajudou a acelerar o processo de rotulagem ao permitir a marcação precisa de retângulos ao redor dos alimentos nas imagens.
+
+Abaixo está um exemplo de como os rótulos são marcados no CVAT:
+
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CVAT.png)
+
+As imagens utilizadas para o treinamento e validação continham labels indicando a presença e identificação do alimento. Já nas imagens de teste, os labels não estavam presentes, sendo a tarefa da IA localizar e identificar corretamente os alimentos.
+
+Os gráficos a seguir ilustram os resultados obtidos com o melhor treinamento realizado:
+
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/F1_curva.png)
+
+Mostra a pontuação F1 (média harmônica de precisão e recuperação) em diferentes limites de confiança. Um pico mais alto sugere melhor desempenho do modelo.
+
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CFN.png)
+
+Na diagonal principal, observa-se o quanto o algoritmo acertou na identificação dos alimentos. As cores mais claras indicam valores de predição mais baixos, resultantes de confusões com outros alimentos ou com o fundo da imagem. Exceto por maçã e cebola, os demais alimentos apresentaram uma precisão de pelo menos 70%, o que é uma média considerável. Podemos observar isso na prática na figura abaixo, onde a IA consegue reconhecer todos os alimentos apresentados.
+
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/teste_IA.png)
+
+Outro aspecto relevante é a análise do último gráfico, que apresenta a precisão de cada alimento de forma numérica. Observa-se que, em alguns casos, a IA confunde alimentos entre si ou com o fundo da imagem. A confusão com o background (fundo) poderia ser mitigada caso imagens sem labels tivessem sido incluídas no treinamento.
+
+![](https://github.com/suzuki1994/PI3-2024/blob/a0ba1a532e0eedd0a04ab466d8b57646ec022bbe/Figuras/resultado.jpg)
+
+## Hardware
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Componentes.png)
 
@@ -76,14 +113,14 @@ A figura abaixo mostra a balança em pleno funcionamento. Os dados são enviados
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/a0ba1a532e0eedd0a04ab466d8b57646ec022bbe/Figuras/Balan%C3%A7a_funcionando.png)
 
-# Software
+## Software
 
-## Amazon RDS
+### Amazon RDS
 Para a implementação do banco de dados utilizado no projeto, primeiro é necessário possuir uma conta no AWS. O Amazon RDS é um serviço que possui plano gratuito, onde é possível criar bancos de dados sem custos, porém dependendo da configuração utilizada ao criar o banco, o serviço pode possuir gastos relevantes.
 
 Neste projeto, utilizamos uma conta do AWS educacional, obtida através de parceria com o IFSC. Para este projeto optamos pela utilização de um banco de dados relacional, visto que é necessário o armazenamento da informação de diversas entidades, com elas se relacionando entre si. 
 
-### Passos para a criação do banco de dados no AWS RDS:
+#### Passos para a criação do banco de dados no AWS RDS:
 1. Realizar o login na conta do AWS.
 2. Buscar por RDS na busca de serviços localizada no topo da página.
 3. No painel do RDS, arraste para baixo até encontrar a opção "Create Database".
@@ -97,18 +134,18 @@ Neste projeto, utilizamos uma conta do AWS educacional, obtida através de parce
 
 Após alguns minutos, o banco de dados estará disponível para conexão.
 
-### Ferramentas utilizadas para comunicação com o banco de dados:
+#### Ferramentas utilizadas para comunicação com o banco de dados:
 - **Psycopg2**:  É um adaptador popular e amplamente utilizado para conectar aplicações Python a bancos de dados PostgreSQL. Utilizando essa biblioteca podemos executar comandos SQL, permitindo que possamos interagir de forma eficiente com o banco de dados via código Python.
 
 - **psql**: É uma interface de linha de comando utilizado para interagir com o banco de dados e utilizamos ela principalmente para debug e testes do banco de dados. Segue abaixo uma imagem demonstrando a visualização de uma das tabelas utilizadas no projeto.
 
-### Estrutura do banco de dados:
+#### Estrutura do banco de dados:
 A arquitetura do banco de dados foi desenhada com três tabelas principais:
 - **Tabela de Usuários**: Contém as informações de identificação dos usuários.
 - **Tabela de Alimentos**: Armazena dados dos alimentos cadastrados.
 - **Tabela de Alimentos Consumidos**: Registra os alimentos consumidos pelos usuários.
 
-#### Tabela de usuários
+##### Tabela de usuários
 A tabela de usuários possui os seguintes campos:
 - `id`: Identificador único do usuário.
 - `email`: Endereço de e-mail do usuário.
@@ -117,7 +154,7 @@ A tabela de usuários possui os seguintes campos:
 
 O e-mail e a senha são utilizados para autenticar o usuário no sistema. O `id` é utilizado como chave estrangeira em outras tabelas, garantindo a associação correta entre os dados de usuários e suas interações com os alimentos.
 
-#### Tabela de alimentos
+##### Tabela de alimentos
 A tabela de alimentos armazena informações sobre os alimentos cadastrados no sistema. A tabela de alimentos possui os seguintes campos:
 - `id`: Identificador único do alimento.
 - `food_name`: Nome do alimento (ex: maçã, arroz).
@@ -131,7 +168,7 @@ A tabela de alimentos armazena informações sobre os alimentos cadastrados no s
 
 > **Observação:** Foi criado uma restrição ao criar a tabela ,de forma a garantir que a combinação de `food_name` e `variety` seja sempre única na tabela.
 
-#### Tabela de diário alimentar
+##### Tabela de diário alimentar
 A tabela de diário alimentar armazena os registros de consumo de alimentos por usuários. A tabela de diário alimentar possui os seguintes campos:
 - `id`: Identificador único da entrada de diário.
 - `user_id`: Identificador do usuário que realizou o registro, referenciando a tabela de usuários.
@@ -156,7 +193,7 @@ Após estabelecer a estrutura do banco de dados, foi desenvolvido um CRUD (Creat
 
 Essas operações foram implementadas para facilitar a interação do usuário com o projeto, garantindo que todas as ações necessárias sejam suportadas de maneira eficiente e eficaz. As funções que performam as operações do CRUD se encontram nos arquivos ```food_diary_crud.py()```, ```users_crud.py()``` e ```ingredients_crud.py()```.
 
-### Conexão Remota com o Banco de Dados
+#### Conexão Remota com o Banco de Dados
 
 Após criar o CRUD, desenvolvemos uma função para conectar ao banco de dados remotamente, permitindo a interação com ele. O código utilizado para essa conexão é o seguinte:
 
@@ -202,43 +239,6 @@ def connect():
 A função ```connnect()``` configura a conexão com o banco de dados utilizando as credenciais do banco de dados criado na AWS e estabelece um cursor para a execução de comandos SQL. Ela é utilizada em diversos pontos do projeto para estabelecer a conexão com o banco.
 
 O comando comentado foi o comando alternativo de debug e testes utilizado para acessar o banco de dados utilizando a ferramenta ```psql```.
-
-## Desenvolvimento e resultados
- Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
-
-O dataset é composto por 1500 imagens, distribuídas entre os alimentos selecionados. A organização dos dados segue a seguinte divisão:
-
- * Treinamento: 70% (1050 imagens)
- * Validação: 20% (300 imagens)
- * Teste: 10% (150 imagens)
-   
-Esta divisão é uma boa prática recomendada para garantir que o modelo seja treinado, validado e testado adequadamente.
-
-Para a marcação dos rótulos, utilizamos a ferramenta CVAT (Computer Vision Annotation Tool). Esta ferramenta ajudou a acelerar o processo de rotulagem ao permitir a marcação precisa de retângulos ao redor dos alimentos nas imagens.
-
-Abaixo está um exemplo de como os rótulos são marcados no CVAT:
-
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CVAT.png)
-
-As imagens utilizadas para o treinamento e validação continham labels indicando a presença e identificação do alimento. Já nas imagens de teste, os labels não estavam presentes, sendo a tarefa da IA localizar e identificar corretamente os alimentos.
-
-Os gráficos a seguir ilustram os resultados obtidos com o melhor treinamento realizado:
-
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/F1_curva.png)
-
-Mostra a pontuação F1 (média harmônica de precisão e recuperação) em diferentes limites de confiança. Um pico mais alto sugere melhor desempenho do modelo.
-
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CFN.png)
-
-Na diagonal principal, observa-se o quanto o algoritmo acertou na identificação dos alimentos. As cores mais claras indicam valores de predição mais baixos, resultantes de confusões com outros alimentos ou com o fundo da imagem. Exceto por maçã e cebola, os demais alimentos apresentaram uma precisão de pelo menos 70%, o que é uma média considerável. Podemos observar isso na prática na figura abaixo, onde a IA consegue reconhecer todos os alimentos apresentados.
-
-![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/teste_IA.png)
-
-Outro aspecto relevante é a análise do último gráfico, que apresenta a precisão de cada alimento de forma numérica. Observa-se que, em alguns casos, a IA confunde alimentos entre si ou com o fundo da imagem. A confusão com o background (fundo) poderia ser mitigada caso imagens sem labels tivessem sido incluídas no treinamento.
-
-![](https://github.com/suzuki1994/PI3-2024/blob/a0ba1a532e0eedd0a04ab466d8b57646ec022bbe/Figuras/resultado.jpg)
-
-
 
 ## Dificuldades 
 Encontramos algumas dificuldades durante o projeto, algumas já resolvemos e outras deixaremos registradas para futuras atualizações. Na hora de integrar a balança com o software do projeto (enviar o valor medido por Wi-Fi), tivemos problemas com o IP do ESP32, que nem sempre era o mesmo ao se conectar à rede, tendo que assim ajustar o IP durante a primeira conexão com uma rede nova.
