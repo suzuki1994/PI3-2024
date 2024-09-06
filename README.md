@@ -19,9 +19,10 @@
   * [MicroPython](#MicroPython)
   * [AmazonRDS](#Amazon-RDS)
     
-[Hardware](#Hardware)
-
 [Desenvolvimento e resultados](#Desenvolvimento-e-resultados)
+  * [Treinamento da Inteligência Artificial](#Treinamento-da-Inteligência-Artificial)
+  * [Hardware](#Hardware)
+  * [Software](#Software)
 
 [Dificuldades](#Dificuldades)
 
