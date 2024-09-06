@@ -309,18 +309,30 @@ Além do fluxo principal, o sistema possui algumas teclas que desempenham funç�
 
 Essas funcionalidades adicionais proporcionam maior controle e flexibilidade durante o uso do sistema, melhorando a experiência do usuário.
 
-## Dificuldades 
-Encontramos algumas dificuldades durante o projeto, algumas já resolvemos e outras deixaremos registradas para futuras atualizações. Na hora de integrar a balança com o software do projeto (enviar o valor medido por Wi-Fi), tivemos problemas com o IP do ESP32, que nem sempre era o mesmo ao se conectar à rede, tendo que assim ajustar o IP durante a primeira conexão com uma rede nova.
+## Dificuldades
 
-Em relação ao dataset, a IA confundia alguns alimentos visualmente semelhantes, como peito de frango com feijão, devido ao formato, ou leite com uma parede branca. Para mitigar esses problemas, treinamos o modelo com variações das imagens do dataset original, como rotações, alterações na claridade e no HUE das cores. Embora tenha havido melhorias, acreditamos que um dataset maior, incluindo imagens de background (imagens sem rótulo no treinamento), provavelmente aumentaria ainda mais a precisão da IA.
+Durante o desenvolvimento do projeto, enfrentamos algumas dificuldades que foram parcialmente resolvidas e outras que foram registradas para futuras atualizações. Abaixo estão algumas das principais dificuldades encontradas:
 
-A principal dificuldade deste projeto foi implementar o banco de dados na AWS, pois tivemos que aprender essa tecnologia do zero, o que resultou em várias tentativas e erros.
+- **Integração com a balança:** Ao integrar a balança com o software do projeto para enviar o peso do alimento medido via Wi-Fi, enfrentamos desafios com o protocolo de comunicação. Após várias tentativas, estabelecemos uma estrutura funcional usando Sockets de comunicação e requisições HTTP para a troca de informações entre hardware e software. No entanto, o IP do ESP32 mudava dependendo da rede em que estava conectado, o que exigia ajustes manuais durante a conexão com redes novas.
+
+- **Problemas com o dataset:** A IA teve dificuldades em distinguir entre alimentos visualmente semelhantes, como tomates e morangos, ou até mesmo confundindo leite com paredes brancas no fundo das imagens. Para mitigar esses problemas, treinamos o modelo com variações das imagens originais, incluindo rotações e alterações na claridade e no HUE das cores. Embora essas medidas tenham melhorado a precisão, acreditamos que um dataset maior, com imagens de fundo (imagens sem rótulo), poderia aumentar ainda mais a precisão da IA.
+
+- **Implementação do banco de dados na AWS:** A principal dificuldade foi a implementação do banco de dados na AWS, uma tecnologia que tivemos que aprender do zero. A integração do banco de dados no projeto, incluindo a atualização, busca e adição de informações em tempo real, também se mostrou desafiadora. Esse processo resultou em várias tentativas e erros, mas proporcionou uma valiosa experiência de aprendizado.
 
 ## Passos futuros
-* Fazer uma case para a balança
-* Ter um IP fixo para a balança enviar os dados (quando muda o WI-FI ele muda o IP)
-* Aumentar o dataset de treinamento
-* Fazer uma interface para o usuário
+
+Para aprimorar o projeto, acreditamos que os seguintes passos poderiam melhorar a qualidade do projeto:
+
+- **Construir um gabinete para a balança:** Criar uma case protetora para a balança, garantindo maior durabilidade e integridade dos componentes.
+
+- **Corrigir estilo de leitura da balança:** Devido as dificuldades ao implementar a integração entre a balança e o software do projeto, não foi possível corrigir a tempo o problema das leituras da balança serem feitas somente quando o usuário seleciona a variedade do alimento. Ao aplicar a leitura constante do peso melhorariamos o uso no dia a dia do projeto para o usuário.
+
+- **Analisar a viabilidade da substituição da comunicação com a balança para Bluetooth:** A utilização do Bluetooth poderia reduzir a necessidade de ajustes manuais, melhorando a experiência do usuário e a eficiência do sistema.
+
+- **Expandir o dataset de treinamento:** Aumentar o tamanho do dataset de treinamento com mais imagens, incluindo imagens que representem melhor o dia a dia do brasileiro e imagens de fundo para melhorar a precisão do modelo.
+
+- **Desenvolver uma interface para o usuário:** Criar uma interface gráfica para o usuário, proporcionando uma experiência mais intuitiva e fácil de usar para interagir com o sistema.
+
 
 ## Referências bibliográficas
 
