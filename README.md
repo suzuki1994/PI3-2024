@@ -27,6 +27,8 @@
 [Dificuldades](#Dificuldades)
 
 [Passos Futuros](#Passos-futuros)
+
+[Referências bibliográficas](Referências-bibliográficas)
   
 ## Introdução
 Este projeto propõe a utilização de inteligência artificial (IA) para monitorar o consumo calórico diário dos usuários, para isso integra um modelo de IA com uma câmera de celular e uma balança, permitindo que os usuários identifiquem automaticamente os alimentos que consomem e, com base no peso detectado pela balança, obtenham informações nutricionais detalhadas, como a quantidade de proteínas, carboidratos e gorduras. Esses dados são então armazenados em um banco de dados na nuvem, onde um resumo calórico é gerado para cada usuário, proporcionando um acompanhamento preciso e contínuo de sua dieta diária.
@@ -255,3 +257,11 @@ A principal dificuldade deste projeto foi implementar o banco de dados na AWS, p
 * Ter um IP fixo para a balança enviar os dados (quando muda o WI-FI ele muda o IP)
 * Aumentar o dataset de treinamento
 * Fazer uma interface para o usuário
+
+## Referências bibliográficas
+
+ULTRALYTICS. YOLOv8 - Ultralytics. Disponível em: https://docs.ultralytics.com/models/yolov8/. Acesso em: 22 abr. 2024.
+
+MICROPYTHON. MicroPython Documentation. Disponível em: https://docs.micropython.org/en/latest/esp32/tutorial/intro.html. Acesso em: 22 abr. 2024.
+
+ULTRALYTICS. Configuring Your Instance - YOLOv5 AWS Quickstart Tutorial. Disponível em: https://docs.ultralytics.com/yolov5/environments/aws_quickstart_tutorial/#configuring-your-instance. Acesso em: 22 abr. 2024.
