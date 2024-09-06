@@ -265,3 +265,5 @@ ULTRALYTICS. YOLOv8 - Ultralytics. Disponível em: https://docs.ultralytics.com/
 MICROPYTHON. MicroPython Documentation. Disponível em: https://docs.micropython.org/en/latest/esp32/tutorial/intro.html. Acesso em: 22 abr. 2024.
 
 ULTRALYTICS. Configuring Your Instance - YOLOv5 AWS Quickstart Tutorial. Disponível em: https://docs.ultralytics.com/yolov5/environments/aws_quickstart_tutorial/#configuring-your-instance. Acesso em: 22 abr. 2024.
+
+JACKSON, Sam. Using RDS on AWS with Jupyter Notebooks. Medium, 6 ago. 2018. Disponível em: https://medium.com/@sjacks/using-rds-on-aws-with-jupyter-notebooks-c2703299fcc8. Acesso em: 15 ago. 2024.
