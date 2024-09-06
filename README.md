@@ -139,6 +139,9 @@ Após alguns minutos, o banco de dados estará disponível para conexão.
 
 - **psql**: É uma interface de linha de comando utilizado para interagir com o banco de dados e utilizamos ela principalmente para debug e testes do banco de dados. Segue abaixo uma imagem demonstrando a visualização de uma das tabelas utilizadas no projeto.
 
+![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/Banco%20de%20dados%20de%20alimentos%20via%20psql.png)
+
+Figuras/Banco de dados de alimentos via psql.png
 #### Estrutura do banco de dados:
 A arquitetura do banco de dados foi desenhada com três tabelas principais:
 - **Tabela de Usuários**: Contém as informações de identificação dos usuários.
