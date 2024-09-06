@@ -245,6 +245,32 @@ A função ```connnect()``` configura a conexão com o banco de dados utilizando
 
 O comando comentado foi o comando alternativo de debug e testes utilizado para acessar o banco de dados utilizando a ferramenta ```psql```.
 
+### Fluxo Geral do Projeto
+
+Após o treinamento da inteligência artificial, o desenvolvimento do hardware necessário e a implementação do banco de dados, passamos para a implementação do fluxo geral do projeto. O fluxo consiste nas seguintes fases:
+
+1. **Fase de Login e Validação do Usuário**
+   - Ao iniciar o projeto, o usuário escolhe se deseja fazer login em uma conta existente ou criar uma nova conta. Essa interação é gerenciada através de um menu exibido no prompt de linha de comando.
+   - Após a validação do usuário, é estabelecida a conexão com o banco de dados na AWS e a câmera do celular ou computador do usuário é aberta para iniciar a captura das imagens.
+
+2. **Detecção de Imagens de Forma Contínua**
+   - Utilizamos a biblioteca OpenCV para o processamento e captura contínua das imagens. O OpenCV é amplamente utilizado em visão computacional.
+   - Cada frame capturado é analisado pelo modelo de detecção de alimentos treinado com YOLOv8. Se um alimento é detectado com uma precisão superior a 90% (valor escolhido pela equipe e passível de alteração), buscamos esse alimento no banco de dados.
+
+3. **Resposta do Sistema ao Identificar um Alimento**
+   - A identificação de um alimento resulta em uma busca no banco de dados com base no nome do alimento detectado. A partir das informações retornadas, passamos para a fase de seleção pelo usuário.
+
+4. **Seleção pelo Usuário da Opção de Alimento Desejado e Pesagem do Alimento**
+   - Utilizando o OpenCV, exibimos na tela as opções de variedades do alimento detectado, cada uma com um valor numérico prefixo. O usuário deve selecionar a opção desejada pressionando a tecla com o número correspondente.
+   - Em seguida, é feita uma requisição via WiFi para a balança para obter a leitura do peso do alimento.
+
+5. **Salvar os Resultados no Banco de Dados**
+   - Após a seleção da variedade do alimento, o sistema calcula as quantidades de proteínas, gorduras e carboidratos consumidos com base no peso do alimento e nas informações armazenadas no banco de dados.
+   - Uma entrada é salva no diário alimentar para o dia específico, e o total de calorias consumidas naquele dia é atualizado. No canto inferior direito da tela, é exibido o total de calorias consumidas naquele dia.
+
+Esse fluxo garante uma interação contínua e precisa entre o usuário e o sistema, permitindo o monitoramento efetivo da ingestão calórica.
+
+
 ## Dificuldades 
 Encontramos algumas dificuldades durante o projeto, algumas já resolvemos e outras deixaremos registradas para futuras atualizações. Na hora de integrar a balança com o software do projeto (enviar o valor medido por Wi-Fi), tivemos problemas com o IP do ESP32, que nem sempre era o mesmo ao se conectar à rede, tendo que assim ajustar o IP durante a primeira conexão com uma rede nova.
 
