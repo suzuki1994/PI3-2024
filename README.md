@@ -52,23 +52,54 @@ O Amazon RDS (Relational Database Service) é um serviço gerenciado da AWS que 
 # Desenvolvimento e resultados
 
 ## Treinamento da Inteligência Artificial
-Para o treinamento da Inteligência Artificial (IA), foram selecionados os seguintes alimentos: Alface; Arroz; Banana; Batata; Carne vermelha; Cebola; Feijão; Carne de frango; Laranja; Leite; Maçã; Melancia; Morango; Ovo; Tomate 
+Para treinar a IA a reconhecer diferentes alimentos, selecionamos para este projeto 15 alimentos comuns presentes no dia a dia do brasileiro.
 
-O dataset é composto por 1500 imagens, distribuídas entre os alimentos selecionados. A organização dos dados segue a seguinte divisão:
+- Alface
+- Arroz
+- Banana
+- Batata
+- Carne vermelha
+- Cebola
+- Feijão
+- Carne de frango
+- Laranja
+- Leite
+- Maçã
+- Melancia
+- Morango
+- Ovo
+- Tomate
 
- * Treinamento: 70% (1050 imagens)
- * Validação: 20% (300 imagens)
- * Teste: 10% (150 imagens)
+O dataset utilizado contém um total de 1500 imagens, distribuídas de maneira a garantir uma cobertura adequada dos diferentes alimentos. 
+
+- **Treinamento (70%):** 1050 imagens
+- **Validação (20%):** 300 imagens
+- **Teste (10%):** 150 imagens
    
-Esta divisão é uma boa prática recomendada para garantir que o modelo seja treinado, validado e testado adequadamente.
+Esta divisão é considerada uma boa prática, recomendada para garantir que o modelo seja treinado, validado e testado adequadamente.
 
-Para a marcação dos rótulos, utilizamos a ferramenta CVAT (Computer Vision Annotation Tool). Esta ferramenta ajudou a acelerar o processo de rotulagem ao permitir a marcação precisa de retângulos ao redor dos alimentos nas imagens.
+Para a rotulagem dos dados, utilizamos a ferramenta CVAT (Computer Vision Annotation Tool). CVAT é uma ferramenta online de anotação e rotulação de imagens, projetada para facilitar a marcação precisa de objetos em imagens e vídeos para serem utilizadas no treinamento de inteligências artificiais. No nosso caso, a ferramenta foi empregada para marcar os alimentos nas imagens com retângulos delimitadores, que indicam a localização e a classe de cada alimento.
+
+> [!CAUTION]
+> O CVAT oferece para o usuário a possibilidade de rotular suas imagens de diversas formas, incluindo a delimitação clicando em pontos na imagem para definir a área a ser rotulada. No entanto, para sistemas treinados utilizando o YOLOv8, o Yolov8 **SOMENTE ACEITA RETÂNGULOS DELIMITADORES**. Embora outras formas de demarcação não causem problemas durante o processo de exportação dos rótulos, elas não são reconhecidas pelo YOLOv8 durante o treinamento. Esse detalhe foi descoberto somente após a demarcação de inúmeras imagens sem utilizar retângulos.
 
 Abaixo está um exemplo de como os rótulos são marcados no CVAT:
 
 ![](https://github.com/suzuki1994/PI3-2024/blob/main/Figuras/CVAT.png)
 
 As imagens utilizadas para o treinamento e validação continham labels indicando a presença e identificação do alimento. Já nas imagens de teste, os labels não estavam presentes, sendo a tarefa da IA localizar e identificar corretamente os alimentos.
+
+O treinamento do YOLOv8 envolve os seguintes passos:
+
+- **Pré-processamento dos Dados:** As imagens foram ajustadas para o tamanho apropriado e os rótulos foram convertidos para o formato exigido pelo YOLOv8.
+  
+- **Configuração do Modelo:** O modelo YOLOv8 foi configurado com parâmetros específicos, como o número de classes (neste caso, 15 tipos de alimentos) e o número de epochs (medida de tempo utilizada para indicar a quantia de ciclos que o sistema passou durante o treinamento. Foram feitos testes com diversos valores de epochs diferentes chegando a um valor de até 300 epochs. 
+
+- **Treinamento:** O modelo foi treinado com as imagens de treinamento, ajustando seus pesos para minimizar a diferença entre as previsões e as anotações reais. Durante o treinamento, o modelo é exposto a diversas imagens e ajusta seus parâmetros para melhorar a detecção de alimentos.
+
+- **Validação:** Durante o treinamento, o modelo foi validado com o conjunto de dados de validação para monitorar sua performance e evitar overfitting. A validação ajuda a garantir que o modelo generalize bem para novas imagens.
+
+- **Teste:** Após o treinamento, o modelo foi testado com o conjunto de dados de teste para avaliar sua precisão final e desempenho em detectar alimentos em imagens nunca vistas antes.
 
 Os gráficos a seguir ilustram os resultados obtidos com o melhor treinamento realizado:
 
