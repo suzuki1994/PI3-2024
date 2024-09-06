@@ -262,14 +262,21 @@ Após o treinamento da inteligência artificial, o desenvolvimento do hardware n
 
 4. **Seleção pelo Usuário da Opção de Alimento Desejado e Pesagem do Alimento**
    - Utilizando o OpenCV, exibimos na tela as opções de variedades do alimento detectado, cada uma com um valor numérico prefixo. O usuário deve selecionar a opção desejada pressionando a tecla com o número correspondente.
-   - Em seguida, é feita uma requisição via WiFi para a balança para obter a leitura do peso do alimento.
+   - Em seguida, é feita uma requisição para a balança para obter a leitura do peso do alimento.
 
 5. **Salvar os Resultados no Banco de Dados**
    - Após a seleção da variedade do alimento, o sistema calcula as quantidades de proteínas, gorduras e carboidratos consumidos com base no peso do alimento e nas informações armazenadas no banco de dados.
    - Uma entrada é salva no diário alimentar para o dia específico, e o total de calorias consumidas naquele dia é atualizado. No canto inferior direito da tela, é exibido o total de calorias consumidas naquele dia.
 
-Esse fluxo garante uma interação contínua e precisa entre o usuário e o sistema, permitindo o monitoramento efetivo da ingestão calórica.
+#### Funcionalidades Adicionais
 
+Além do fluxo principal, o sistema possui algumas teclas que desempenham funções importantes para melhorar a experiência do usuário:
+
+- **Tecla 'T':** Lista o total de proteínas, carboidratos e gorduras consumidas para o dia inteiro em detalhes.
+- **Tecla 'C':** Cancela a seleção da variedade de um alimento, permitindo que o sistema retome a detecção de novos alimentos. Essa tecla é útil para descartar leituras errôneas de alimentos detectados.
+- **Tecla 'Q':** Finaliza o projeto e fecha a janela de captura de imagens.
+
+Essas funcionalidades adicionais proporcionam maior controle e flexibilidade durante o uso do sistema, melhorando a experiência do usuário.
 
 ## Dificuldades 
 Encontramos algumas dificuldades durante o projeto, algumas já resolvemos e outras deixaremos registradas para futuras atualizações. Na hora de integrar a balança com o software do projeto (enviar o valor medido por Wi-Fi), tivemos problemas com o IP do ESP32, que nem sempre era o mesmo ao se conectar à rede, tendo que assim ajustar o IP durante a primeira conexão com uma rede nova.
